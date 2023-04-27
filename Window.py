@@ -1,8 +1,8 @@
 import wx
-import time
-from wx.adv import Animation, AnimationCtrl
 
-import PlayAnimation
+
+
+
 
 class Window(wx.Frame):
     def __init__(self, title):
@@ -13,8 +13,8 @@ class Window(wx.Frame):
         sizer = wx.GridBagSizer(50, 80)
 
         button = wx.Button(self.panel, label = "Press me!")
-        button.SetBitmap(wx.Bitmap("detonator.bmp"))
-        button.SetBackgroundColour("white")
+
+
         button.Bind(wx.EVT_BUTTON, self.OnClick)
 
         sizer.Add(button, pos = (1, 1))
@@ -31,14 +31,14 @@ class Window(wx.Frame):
     def OnClick(self, e):
         widget = e.GetEventObject()
         widget.SetLabel("BUMM!")
-        widget.SetBitmap(wx.Bitmap("explosion.bmp"))
 
-        if len(self.activeAnimations) < 7:
-            self.activeAnimations.append(PlayAnimation.PlayAnimation("Animation"))
-            self.activeAnimations[-1].Show()
-        else:
-            widget.SetSize((250,30))
-            widget.SetLabel("Sajna csak 7 van egy instance-ban")
+
+
+
+
+
+
+
 
     
     def OnCloseWindow(self, event):
